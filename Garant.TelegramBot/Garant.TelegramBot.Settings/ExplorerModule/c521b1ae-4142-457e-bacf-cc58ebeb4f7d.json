@@ -1,0 +1,9 @@
+{
+  "$type": "Sungero.DataExport.ExportingObject, Sungero.DataExport",
+  "Uuid": "c521b1ae-4142-457e-bacf-cc58ebeb4f7d",
+  "ModuleNameGuid": "c521b1ae-4142-457e-bacf-cc58ebeb4f7d",
+  "HelpCode": "Garant_TelegramBot",
+  "Status": "Active",
+  "SortingPriority": "Medium",
+  "StoreAsDefaultSetting": true
+}

@@ -1,0 +1,30 @@
+{
+  "Action_Description_8d75a822b28943b7926eec652ab2d70b": {
+    "ru-RU": "Открытие справочника пользователей чат-бота."
+  },
+  "Action_Title_8d75a822b28943b7926eec652ab2d70b": {
+    "en-US": "Action",
+    "ru-RU": "Пользователи чат-бота"
+  },
+  "CoverHeaderSettings_Description_14a65ddff050434a8520012df8ffbae7": {
+    "ru-RU": "Модуль предназначен для настройки интеграции с чат-ботом."
+  },
+  "CoverHeaderSettings_Title_14a65ddff050434a8520012df8ffbae7": {
+    "en-US": "TelegramBot",
+    "ru-RU": "Telegram чат-бот"
+  },
+  "Description": {
+    "ru-RU": "Модуль предназначен для настройки интеграции с чат-ботом."
+  },
+  "Group_Title_06de76edbc7640c0aee4d433eda8953b": {
+    "en-US": "Group",
+    "ru-RU": "Настройки"
+  },
+  "Name": {
+    "en-US": "Telegram chatbot",
+    "ru-RU": "Telegram чат-бот"
+  },
+  "Tab_Title_353ac628e287478c8a76845bd6e59cbe": {
+    "en-US": "Tab"
+  }
+}

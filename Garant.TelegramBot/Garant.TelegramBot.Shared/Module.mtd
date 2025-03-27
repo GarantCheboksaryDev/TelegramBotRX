@@ -1,0 +1,251 @@
+{
+  "$type": "Sungero.Metadata.ModuleMetadata, Sungero.Metadata",
+  "NameGuid": "c521b1ae-4142-457e-bacf-cc58ebeb4f7d",
+  "Name": "TelegramBot",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "Garant.TelegramBot.Client",
+  "ClientBaseAssemblyName": "Garant.TelegramBot.ClientBase",
+  "ClientBaseNamespace": "Garant.TelegramBot.ClientBase",
+  "ClientNamespace": "Garant.TelegramBot.Client",
+  "Code": "Telegr1",
+  "CompanyCode": "Garant",
+  "Cover": {
+    "NameGuid": "7f13576d-698c-4931-b30b-4476ed4a420b",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "d6bedf91-ddba-4b38-97c9-cf0b1febc03b",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "14a65ddf-f050-434a-8520-012df8ffbae7",
+      "BackgroundPosition": "Stretch",
+      "IconName": "HeaderIcon_14a65ddff050434a8520012df8ffbae7.png"
+    },
+    "RemoteControls": [],
+    "Tabs": []
+  },
+  "Dependencies": [
+    {
+      "Id": "1b24fc12-d089-473c-ac23-782d71826b51",
+      "IsSolutionModule": true,
+      "MaxVersion": "",
+      "MinVersion": ""
+    },
+    {
+      "Id": "df83a2ea-8d43-4ec4-a34a-2e61863014df",
+      "MaxVersion": "",
+      "MinVersion": "4.12.146.0"
+    }
+  ],
+  "ExplorerTreeOrder": [
+    {
+      "ItemId": "9de34544-3489-4513-ab4d-96eb5bcec37f"
+    }
+  ],
+  "HandledEvents": [
+    "InitializingServer"
+  ],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "Garant.TelegramBot",
+  "IsolatedAssemblyName": "Garant.TelegramBot.Isolated",
+  "IsolatedNamespace": "Garant.TelegramBot.Isolated",
+  "IsVisible": false,
+  "Overridden": [
+    "IsVisible"
+  ],
+  "PublicFunctions": [
+    {
+      "Name": "CreateBotUser",
+      "Parameters": [
+        {
+          "Name": "mail",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "chatId",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "username",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void",
+      "WebApiRequestType": "Post"
+    },
+    {
+      "Name": "CreateRequest",
+      "Parameters": [
+        {
+          "Name": "requestText",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "username",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void",
+      "WebApiRequestType": "Post"
+    },
+    {
+      "Name": "GetCounterparties",
+      "Parameters": [
+        {
+          "Name": "name",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Collections.Generic.List<global::Garant.TelegramBot.Structures.Module.IEntityInfo>",
+      "ReturnTypeFullName": "System.Collections.Generic.List",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "GetDocuments",
+      "Parameters": [
+        {
+          "Name": "documentTypeId",
+          "ParameterType": "global::System.Int64",
+          "ParameterTypeFullName": "System.Int64"
+        },
+        {
+          "Name": "name",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "username",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::Garant.TelegramBot.Structures.Module.IEntityInfosWithMessage",
+      "ReturnTypeFullName": "Garant.TelegramBot.Structures.Module.IEntityInfosWithMessage",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "GetDocumentTypes",
+      "ReturnType": "global::System.Collections.Generic.List<global::Garant.TelegramBot.Structures.Module.IEntityInfo>",
+      "ReturnTypeFullName": "System.Collections.Generic.List",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "GetDocumentVersion",
+      "Parameters": [
+        {
+          "Name": "documentId",
+          "ParameterType": "global::System.Int64",
+          "ParameterTypeFullName": "System.Int64"
+        }
+      ],
+      "ReturnType": "global::Garant.TelegramBot.Structures.Module.IVersionInfo",
+      "ReturnTypeFullName": "Garant.TelegramBot.Structures.Module.IVersionInfo",
+      "WebApiRequestType": "Get"
+    },
+    {
+      "Name": "SetChatId",
+      "Parameters": [
+        {
+          "Name": "username",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "chatId",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void",
+      "WebApiRequestType": "Post"
+    }
+  ],
+  "PublicStructures": [
+    {
+      "Name": "EntityInfo",
+      "IsPublic": true,
+      "Properties": [
+        {
+          "Name": "Name",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        },
+        {
+          "Name": "Id",
+          "TypeFullName": "global::System.Int64"
+        }
+      ],
+      "StructureNamespace": "Garant.TelegramBot.Structures.Module"
+    },
+    {
+      "Name": "EntityInfosWithMessage",
+      "IsPublic": true,
+      "Properties": [
+        {
+          "Name": "Error",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        }
+      ],
+      "StructureNamespace": "Garant.TelegramBot.Structures.Module"
+    },
+    {
+      "Name": "VersionInfo",
+      "IsPublic": true,
+      "Properties": [
+        {
+          "Name": "VersionBody",
+          "IsArray": true,
+          "TypeFullName": "global::System.Byte[]"
+        },
+        {
+          "Name": "Extension",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        },
+        {
+          "Name": "Name",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        }
+      ],
+      "StructureNamespace": "Garant.TelegramBot.Structures.Module"
+    }
+  ],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "Garant.TelegramBot",
+  "ResourcesKeys": [
+    "RequestResponsibles",
+    "RequestSubject"
+  ],
+  "ServerAssemblyName": "Garant.TelegramBot.Server",
+  "ServerNamespace": "Garant.TelegramBot.Server",
+  "SharedAssemblyName": "Garant.TelegramBot.Shared",
+  "SharedNamespace": "Garant.TelegramBot.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "ModuleMetadata",
+      "Number": 8
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}
