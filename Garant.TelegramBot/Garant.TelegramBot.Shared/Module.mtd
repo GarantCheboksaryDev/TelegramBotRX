@@ -93,6 +93,15 @@
           "Name": "username",
           "ParameterType": "global::System.String",
           "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "file",
+          "ParameterType": "System.Byte[]"
+        },
+        {
+          "Name": "filename",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
         }
       ],
       "ReturnType": "void",
@@ -131,8 +140,8 @@
           "ParameterTypeFullName": "System.String"
         }
       ],
-      "ReturnType": "global::Garant.TelegramBot.Structures.Module.IEntityInfosWithMessage",
-      "ReturnTypeFullName": "Garant.TelegramBot.Structures.Module.IEntityInfosWithMessage",
+      "ReturnType": "global::Garant.TelegramBot.Structures.Module.IEntitiesWithError",
+      "ReturnTypeFullName": "Garant.TelegramBot.Structures.Module.IEntitiesWithError",
       "WebApiRequestType": "Get"
     },
     {
@@ -175,6 +184,24 @@
   ],
   "PublicStructures": [
     {
+      "Name": "EntitiesWithError",
+      "IsPublic": true,
+      "Properties": [
+        {
+          "Name": "EntityInfos",
+          "IsList": true,
+          "IsNullable": true,
+          "TypeFullName": "global::System.Collections.Generic.List<global::Garant.TelegramBot.Structures.Module.IEntityInfo>"
+        },
+        {
+          "Name": "Error",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        }
+      ],
+      "StructureNamespace": "Garant.TelegramBot.Structures.Module"
+    },
+    {
       "Name": "EntityInfo",
       "IsPublic": true,
       "Properties": [
@@ -186,18 +213,6 @@
         {
           "Name": "Id",
           "TypeFullName": "global::System.Int64"
-        }
-      ],
-      "StructureNamespace": "Garant.TelegramBot.Structures.Module"
-    },
-    {
-      "Name": "EntityInfosWithMessage",
-      "IsPublic": true,
-      "Properties": [
-        {
-          "Name": "Error",
-          "IsNullable": true,
-          "TypeFullName": "global::System.String"
         }
       ],
       "StructureNamespace": "Garant.TelegramBot.Structures.Module"

@@ -6,7 +6,6 @@ using Sungero.CoreEntities;
 
 namespace Garant.TelegramBot.Structures.Module
 {
-
   /// <summary>
   /// Структура для передачи информации о версии документа в чат-бот.
   /// </summary>
@@ -32,9 +31,10 @@ namespace Garant.TelegramBot.Structures.Module
   /// Структура для передачи информации о сущностях и об ошибках в чат-бот.
   /// </summary>
   [Public]
-  partial class EntityInfosWithMessage
+  partial class EntitiesWithError
   {
-    //public List<Garant.TelegramBot.Structures.Module.IEntityInfo> Entities { get; set; }
+    public List<Garant.TelegramBot.Structures.Module.IEntityInfo> EntityInfos { get; set; }
     public string Error { get; set; }
   }
+
 }

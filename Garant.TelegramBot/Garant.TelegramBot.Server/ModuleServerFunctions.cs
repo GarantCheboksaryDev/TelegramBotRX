@@ -62,19 +62,19 @@ namespace Garant.TelegramBot.Server
     /// <param name="name">Наименование для поиска.</param>
     /// <returns>Найденные по введенному наименованию документы. При поиске проверяется вхождение слов введенной строки в наименовании и юридическом наименовании записи справочника.</returns>
     [Public(WebApiRequestType = RequestType.Get)]
-    public Structures.Module.IEntityInfosWithMessage GetDocuments(long documentTypeId, string name, string username)
+    public Structures.Module.IEntitiesWithError GetDocuments(long documentTypeId, string name, string username)
     {
       var documentType = Sungero.Docflow.DocumentTypes.GetAll(x => x.Id == documentTypeId).FirstOrDefault();
       if (documentType == null)
-        return new Structures.Module.EntityInfosWithMessage.Create(new List<TelegramBot.Structures.Module.IEntityInfo>(), "Не найден тип документа по ИД");
+        return Structures.Module.EntitiesWithError.Create(new List<TelegramBot.Structures.Module.IEntityInfo>(), "Не найден тип документа по ИД");
       
       var employee = Functions.BotUser.GetEmployeeByUsername(username);
       if (employee == null)
-        return new Structures.Module.EntityInfosWithMessage.Create(new List<TelegramBot.Structures.Module.IEntityInfo>(), "Не удалось найти сотрудника в Directum RX по логину в telegram");
+        return Structures.Module.EntitiesWithError.Create(new List<TelegramBot.Structures.Module.IEntityInfo>(), "Не удалось найти сотрудника в Directum RX по логину в telegram");
       
       var searchTerms = GetSearchTerms(name);
       if (!searchTerms.Any())
-        return new Structures.Module.EntityInfosWithMessage.Create(new List<TelegramBot.Structures.Module.IEntityInfo>(), "Не удалось найти сотрудника в Directum RX по логину в telegram");
+        return Structures.Module.EntitiesWithError.Create(new List<TelegramBot.Structures.Module.IEntityInfo>(), "Не удалось найти сотрудника в Directum RX по логину в telegram");
       
       var query = Sungero.Docflow.OfficialDocuments.GetAll(x => x.DocumentKind != null
                                                            && Equals(x.DocumentKind.DocumentType, documentType));
@@ -82,7 +82,7 @@ namespace Garant.TelegramBot.Server
         query = query.Where(x => (x.Name != null && x.Name != string.Empty && x.Name.ToLower().Contains(searchTerm)));
 
       if (query.Count() > 500)
-       return new Structures.Module.EntityInfosWithMessage.Create(null, "Пожалуйста, уточните запрос");
+        return Structures.Module.EntitiesWithError.Create(null, "Пожалуйста, уточните запрос");
       
       var entities = query.OrderBy(x => x.Name)
         .Take(200)
@@ -91,7 +91,7 @@ namespace Garant.TelegramBot.Server
         .Select(x => TelegramBot.Structures.Module.EntityInfo.Create(x.Name, x.Id))
         .ToList();
       
-      return new Garant.TelegramBot.Structures.Module.EntityInfosWithMessage.Create(entities, string.Empty);
+      return Garant.TelegramBot.Structures.Module.EntitiesWithError.Create(entities, string.Empty);
     }
     
     /// <summary>
@@ -174,15 +174,34 @@ namespace Garant.TelegramBot.Server
     /// <param name="requestText">Текст заявки.</param>
     /// <param name="EmployeeId">Логин пользователя чат-бота, от имени которого отправляется заявка.</param>
     [Public(WebApiRequestType = RequestType.Post)]
-    public void CreateRequest(string requestText, string username)
+    public void CreateRequest(string requestText, string username, byte[] file, string filename)
     {
       var subject = Sungero.Docflow.PublicFunctions.Module.CutText(Garant.TelegramBot.Resources.RequestSubjectFormat(requestText), Sungero.Workflow.SimpleTasks.Info.Properties.Subject.Length);
       var requestsResponsibleRole = Roles.GetAll(x => x.Sid == Constants.Module.Roles.RequestsResponsibleRoleGuid).FirstOrDefault();
       var author = Functions.BotUser.GetEmployeeByUsername(username);
-      var task = Sungero.Workflow.SimpleTasks.Create(subject, requestsResponsibleRole);
-      task.ActiveText = requestText;
-      task.Author = author;
-      task.Start();
+      if (requestsResponsibleRole != null && author != null)
+      {
+        var task = Sungero.Workflow.SimpleTasks.Create(subject, requestsResponsibleRole);
+        task.ActiveText = requestText;
+        task.Author = author;
+        if (file != null && file.Any() && !string.IsNullOrEmpty(filename))
+        {
+          var document = Sungero.Docflow.SimpleDocuments.Create();
+          document.Name = Sungero.Docflow.PublicFunctions.Module.CutText(filename, Sungero.Docflow.SimpleDocuments.Info.Properties.Name.Length);
+          document.Author = author;
+          document.PreparedBy = author;
+          document.Department = author.Department;
+          document.AccessRights.Grant(author, DefaultAccessRightsTypes.FullAccess);
+          using (var stream = new System.IO.MemoryStream(file))
+          {
+            var extension = filename.Split('.').LastOrDefault();
+            document.CreateVersionFrom(stream, extension ?? string.Empty);
+          }
+          document.Save();
+          task.Attachments.Add(document);
+        }
+        task.Start();
+      }
     }
   }
 }
