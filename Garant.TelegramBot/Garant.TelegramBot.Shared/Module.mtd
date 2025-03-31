@@ -244,7 +244,10 @@
   "ResourceInterfaceNamespace": "Garant.TelegramBot",
   "ResourcesKeys": [
     "RequestResponsibles",
-    "RequestSubject"
+    "RequestSubject",
+    "DocumentTypeNotFound",
+    "EmployeeNotFound",
+    "ClarifyRequest"
   ],
   "ServerAssemblyName": "Garant.TelegramBot.Server",
   "ServerNamespace": "Garant.TelegramBot.Server",

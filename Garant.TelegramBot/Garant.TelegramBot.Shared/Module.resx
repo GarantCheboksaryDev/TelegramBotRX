@@ -64,4 +64,13 @@
   <data name="RequestSubject" xml:space="preserve">
     <value>Complete the request: {0}</value>
   </data>
+  <data name="DocumentTypeNotFound" xml:space="preserve">
+    <value>Document type not found by ID</value>
+  </data>
+  <data name="EmployeeNotFound" xml:space="preserve">
+    <value>Could not find an employee in Directum RX by login in telegram</value>
+  </data>
+  <data name="ClarifyRequest" xml:space="preserve">
+    <value>Please clarify your request</value>
+  </data>
 </root>

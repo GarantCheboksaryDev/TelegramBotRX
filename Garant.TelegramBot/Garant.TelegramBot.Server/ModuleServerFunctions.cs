@@ -8,10 +8,16 @@ namespace Garant.TelegramBot.Server
 {
   public class ModuleFunctions
   {
+    /// <summary>
+    /// Разбить поисковый запрос на слова.
+    /// </summary>
+    /// <param name="name">Исходный поисковый запрос.</param>
+    /// <returns>Слова из поискового запроса.</returns>
     private static string[] GetSearchTerms(string name)
     {
       if (name != null)
-        return name.Split(new char[] { ' ', ',', '.', '\'', '\"' })
+        return name.Split(new char[] { ' ', ',', '.', '\'', '\"', '-', '_', '!', '?', ':', ';'})
+          .Where(x => !string.IsNullOrEmpty(x))
           .Select(x => x.ToLower())
           .ToArray();
       else
@@ -22,7 +28,7 @@ namespace Garant.TelegramBot.Server
     /// Получить информацию о компаниях для телеграм-бота.
     /// </summary>
     /// <param name="name">Наименование для поиска.</param>
-    /// <returns>Найденные по введенному наименованию компании. При поиске проверяется вхождение слов введенной строки в наименовании и юридическом наименовании записи справочника.</returns>
+    /// <returns>Найденные по введенному наименованию компании. При поиске проверяется вхождение слов введенной строки в наименовании и юридическом наименовании.</returns>
     [Public(WebApiRequestType = RequestType.Get)]
     public List<TelegramBot.Structures.Module.IEntityInfo> GetCounterparties(string name)
     {
@@ -66,15 +72,15 @@ namespace Garant.TelegramBot.Server
     {
       var documentType = Sungero.Docflow.DocumentTypes.GetAll(x => x.Id == documentTypeId).FirstOrDefault();
       if (documentType == null)
-        return Structures.Module.EntitiesWithError.Create(new List<TelegramBot.Structures.Module.IEntityInfo>(), "Не найден тип документа по ИД");
+        return Structures.Module.EntitiesWithError.Create(new List<TelegramBot.Structures.Module.IEntityInfo>(), Garant.TelegramBot.Resources.DocumentTypeNotFound);
       
       var employee = Functions.BotUser.GetEmployeeByUsername(username);
       if (employee == null)
-        return Structures.Module.EntitiesWithError.Create(new List<TelegramBot.Structures.Module.IEntityInfo>(), "Не удалось найти сотрудника в Directum RX по логину в telegram");
+        return Structures.Module.EntitiesWithError.Create(new List<TelegramBot.Structures.Module.IEntityInfo>(), Garant.TelegramBot.Resources.EmployeeNotFound);
       
       var searchTerms = GetSearchTerms(name);
       if (!searchTerms.Any())
-        return Structures.Module.EntitiesWithError.Create(new List<TelegramBot.Structures.Module.IEntityInfo>(), "Не удалось найти сотрудника в Directum RX по логину в telegram");
+        return Structures.Module.EntitiesWithError.Create(new List<TelegramBot.Structures.Module.IEntityInfo>(), Garant.TelegramBot.Resources.ClarifyRequest);
       
       var query = Sungero.Docflow.OfficialDocuments.GetAll(x => x.DocumentKind != null
                                                            && Equals(x.DocumentKind.DocumentType, documentType));
@@ -82,12 +88,12 @@ namespace Garant.TelegramBot.Server
         query = query.Where(x => (x.Name != null && x.Name != string.Empty && x.Name.ToLower().Contains(searchTerm)));
 
       if (query.Count() > 500)
-        return Structures.Module.EntitiesWithError.Create(null, "Пожалуйста, уточните запрос");
+        return Structures.Module.EntitiesWithError.Create(null, Garant.TelegramBot.Resources.ClarifyRequest);
       
       var entities = query.OrderBy(x => x.Name)
-        .Take(200)
         .ToList()
         .Where(x => x.AccessRights.CanRead(employee))
+        .Take(200)
         .Select(x => TelegramBot.Structures.Module.EntityInfo.Create(x.Name, x.Id))
         .ToList();
       
