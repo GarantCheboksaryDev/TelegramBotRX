@@ -1,0 +1,62 @@
+{
+  "$type": "Sungero.Metadata.SolutionMetadata, Sungero.Metadata",
+  "NameGuid": "1b24fc12-d089-473c-ac23-782d71826b51",
+  "Name": "TelegramSolution",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "Garant.TelegramSolution.Client",
+  "ClientBaseAssemblyName": "Garant.TelegramSolution.ClientBase",
+  "ClientBaseNamespace": "Garant.TelegramSolution.ClientBase",
+  "ClientNamespace": "Garant.TelegramSolution.Client",
+  "Code": "Telegra",
+  "CompanyCode": "Garant",
+  "Cover": {
+    "NameGuid": "78bf885d-c41d-45ec-89ee-7e54cce3d5ea",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "e4bb3193-954e-46ab-b7fa-9e58161c5e5a",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "c755945f-f587-4fe2-bf72-a9ba8f58ccdb",
+      "BackgroundPosition": "Stretch"
+    },
+    "RemoteControls": [],
+    "Tabs": []
+  },
+  "DesktopViews": [],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "Garant.TelegramSolution",
+  "IsolatedAssemblyName": "Garant.TelegramSolution.Isolated",
+  "IsolatedNamespace": "Garant.TelegramSolution.Isolated",
+  "IsVisible": false,
+  "OrderedSpecialFolders": [],
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "Garant.TelegramSolution",
+  "ResourcesKeys": [],
+  "ServerAssemblyName": "Garant.TelegramSolution.Server",
+  "ServerNamespace": "Garant.TelegramSolution.Server",
+  "SharedAssemblyName": "Garant.TelegramSolution.Shared",
+  "SharedNamespace": "Garant.TelegramSolution.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "SolutionMetadata",
+      "Number": 8
+    },
+    {
+      "Type": "ModuleMetadata",
+      "Number": 8
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}
