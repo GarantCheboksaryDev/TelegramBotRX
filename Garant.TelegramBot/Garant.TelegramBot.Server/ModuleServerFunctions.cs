@@ -251,7 +251,7 @@ namespace Garant.TelegramBot.Server
           if (!string.IsNullOrEmpty(file.Body) && !string.IsNullOrEmpty(file.Name))
           {
             var document = Sungero.Docflow.SimpleDocuments.Create();
-            document.Name = Sungero.Docflow.PublicFunctions.Module.CutText(file.Name, Sungero.Docflow.SimpleDocuments.Info.Properties.Name.Length);
+            document.Name = Sungero.Docflow.PublicFunctions.Module.CutText(System.IO.Path.GetFileNameWithoutExtension(file.Name), Sungero.Docflow.SimpleDocuments.Info.Properties.Name.Length);
             document.Author = author;
             document.PreparedBy = author;
             document.Department = author.Department;
