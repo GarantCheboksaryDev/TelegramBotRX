@@ -5,6 +5,12 @@ namespace Garant.TelegramBot.Constants
 {
   public static class Module
   {
+
+    /// <summary>
+    /// Значение по-умолчанию для масимального количества сущностей, получаемых чат-ботом из сервиса интеграции.
+    /// </summary>
+    public const int DefaultMaxEntitiesCount = 200;
+    
     /// <summary>
     /// Guid-ы ролей.
     /// </summary>

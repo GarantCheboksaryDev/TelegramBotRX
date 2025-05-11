@@ -58,37 +58,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Property_Username" xml:space="preserve">
-    <value>Имя пользователя</value>
+  <data name="Property_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Property_EntitiesCount" xml:space="preserve">
+    <value>Maximum number of entities received</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Пользователь чат-бота</value>
+    <value>Module settings</value>
   </data>
   <data name="AccusativeDisplayName" xml:space="preserve">
-    <value>Пользователя чат-бота</value>
+    <value>Module settings</value>
   </data>
   <data name="CollectionDisplayName" xml:space="preserve">
-    <value>Пользователи чат-бота</value>
-  </data>
-  <data name="Property_Employee" xml:space="preserve">
-    <value>Сотрудник</value>
-  </data>
-  <data name="Property_ChatId" xml:space="preserve">
-    <value>ИД чата</value>
-  </data>
-  <data name="Property_UserId" xml:space="preserve">
-    <value>ИД пользователя</value>
-  </data>
-  <data name="Property_Token" xml:space="preserve">
-    <value>Токен для регистрации</value>
-  </data>
-  <data name="Action_GetToken" xml:space="preserve">
-    <value>Получить рег. токен</value>
-  </data>
-  <data name="Action_GetTokenHint" xml:space="preserve">
-    <value>Получение токена для регистрации в чат-боте</value>
-  </data>
-  <data name="Action_GetTokenDescription" xml:space="preserve">
-    <value>Получение токена для регистрации в чат-боте</value>
+    <value>Module settings</value>
   </data>
 </root>

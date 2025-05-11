@@ -6,6 +6,23 @@ using Sungero.CoreEntities;
 
 namespace Garant.TelegramBot.Structures.Module
 {
+
+  /// <summary>
+  /// Структура для получения информации о файлах из чат-бота.
+  /// </summary>
+  [Public(Isolated=true)]
+  partial class FileInfo
+  {
+    /// <summary>
+    /// Тело файла.
+    /// </summary>
+    public string Body { get; set; }
+    /// <summary>
+    /// Имя файла.
+    /// </summary>
+    public string Name { get; set; }
+  }
+  
   /// <summary>
   /// Структура для передачи информации о версии документа в чат-бот.
   /// </summary>

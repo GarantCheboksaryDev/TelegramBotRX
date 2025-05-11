@@ -24,5 +24,19 @@ namespace Garant.TelegramBot.Server
                                                                       Garant.TelegramBot.Resources.RequestResponsibles,
                                                                       Constants.Module.Roles.RequestsResponsibleRoleGuid);
     }
+    
+    /// <summary>
+    /// Инициализация справочника настроек.
+    /// </summary>
+    public static void CreateSetting()
+    {
+      var setting = Settings.GetAll().FirstOrDefault();
+      if (setting == null)
+      {
+        setting = Settings.Create();
+        setting.EntitiesCount = Constants.Module.DefaultMaxEntitiesCount;
+        setting.Save();
+      }
+    }
   }
 }

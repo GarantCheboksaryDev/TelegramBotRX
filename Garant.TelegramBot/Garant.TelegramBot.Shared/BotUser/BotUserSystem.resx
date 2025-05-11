@@ -76,4 +76,25 @@
   <data name="Property_ChatId" xml:space="preserve">
     <value>Chat ID</value>
   </data>
+  <data name="Property_UserId" xml:space="preserve">
+    <value>User ID</value>
+  </data>
+  <data name="Property_Token" xml:space="preserve">
+    <value>Registration token</value>
+  </data>
+  <data name="Action_GetToken" xml:space="preserve">
+    <value>Get reg. token</value>
+  </data>
+  <data name="Action_GetTokenDescription" xml:space="preserve">
+    <value>Getting a token to register in the chatbot</value>
+  </data>
+  <data name="Action_GetTokenHint" xml:space="preserve">
+    <value>Getting a token to register in the chatbot</value>
+  </data>
+  <data name="Action_GetTokenConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_GetTokenConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
 </root>
