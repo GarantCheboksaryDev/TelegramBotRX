@@ -73,4 +73,10 @@
   <data name="ClarifyRequest" xml:space="preserve">
     <value>Please clarify your request</value>
   </data>
+  <data name="OpenChatbotSettingsFunctionName" xml:space="preserve">
+    <value>Open chatbot settings</value>
+  </data>
+  <data name="OpenChatbotSettingsFunctionDescription" xml:space="preserve">
+    <value>Opening a chatbot settings directory entry</value>
+  </data>
 </root>

@@ -13,6 +13,7 @@ namespace Garant.TelegramBot.Server
     public override void Initializing(Sungero.Domain.ModuleInitializingEventArgs e)
     {
       CreateRoles();
+      CreateSetting();
     }
     
     /// <summary>

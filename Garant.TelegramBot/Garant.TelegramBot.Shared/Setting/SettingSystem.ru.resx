@@ -65,12 +65,12 @@
     <value>Максимальное количество получаемых сущностей</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Настройки модуля</value>
+    <value>Настройки чат-бота</value>
   </data>
   <data name="AccusativeDisplayName" xml:space="preserve">
-    <value>Настройки модуля</value>
+    <value>Настройки чат-бота</value>
   </data>
   <data name="CollectionDisplayName" xml:space="preserve">
-    <value>Настройки модуля</value>
+    <value>Настройки чат-бота</value>
   </data>
 </root>

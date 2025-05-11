@@ -10,5 +10,15 @@ namespace Garant.TelegramBot.Server
   partial class SettingFunctions
   {
 
+    /// <summary>
+    /// Получить запись справочника "Настройки чат-бота".
+    /// </summary>
+    /// <returns></returns>
+    [Remote]
+    public static Garant.TelegramBot.ISetting GetChatbotSettings()
+    {
+      return Garant.TelegramBot.Settings.GetAll().FirstOrDefault();
+    }
+
   }
 }

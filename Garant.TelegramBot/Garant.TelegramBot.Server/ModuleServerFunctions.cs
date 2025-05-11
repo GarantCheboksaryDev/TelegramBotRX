@@ -31,7 +31,7 @@ namespace Garant.TelegramBot.Server
     [Public(WebApiRequestType = RequestType.Get)]
     public List<TelegramBot.Structures.Module.IEntityInfo> GetCounterparties(string name)
     {
-      var setting = Settings.GetAll().FirstOrDefault();
+      var setting = Functions.Setting.GetChatbotSettings();
       var entitiesCount = setting != null && setting.EntitiesCount.HasValue ? setting.EntitiesCount.Value : Constants.Module.DefaultMaxEntitiesCount;
       
       var searchTerms = GetSearchTerms(name);
@@ -72,7 +72,7 @@ namespace Garant.TelegramBot.Server
     [Public(WebApiRequestType = RequestType.Get)]
     public Structures.Module.IEntitiesWithError GetDocuments(long documentTypeId, string name, long userId)
     {
-      var setting = Settings.GetAll().FirstOrDefault();
+      var setting = Functions.Setting.GetChatbotSettings();
       var entitiesCount = setting != null && setting.EntitiesCount.HasValue ? setting.EntitiesCount.Value : Constants.Module.DefaultMaxEntitiesCount;
       
       var documentType = Sungero.Docflow.DocumentTypes.GetAll(x => x.Id == documentTypeId).FirstOrDefault();

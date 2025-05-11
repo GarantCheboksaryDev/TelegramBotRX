@@ -122,6 +122,7 @@
       "Name": "Username",
       "Code": "Username",
       "IsDisplayValue": true,
+      "IsEnabled": false,
       "IsQuickSearchAllowed": true,
       "Length": 100,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",

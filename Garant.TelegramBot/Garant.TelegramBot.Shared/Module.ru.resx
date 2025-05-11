@@ -73,4 +73,10 @@
   <data name="ClarifyRequest" xml:space="preserve">
     <value>Пожалуйста, уточните запрос</value>
   </data>
+  <data name="OpenChatbotSettingsFunctionName" xml:space="preserve">
+    <value>Открыть настройки чат-бота</value>
+  </data>
+  <data name="OpenChatbotSettingsFunctionDescription" xml:space="preserve">
+    <value>Открытие записи справочника настроек чат-бота</value>
+  </data>
 </root>

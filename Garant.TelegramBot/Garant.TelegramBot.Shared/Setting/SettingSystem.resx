@@ -65,12 +65,12 @@
     <value>Maximum number of entities received</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Module settings</value>
+    <value>Chatbot settings</value>
   </data>
   <data name="AccusativeDisplayName" xml:space="preserve">
-    <value>Module settings</value>
+    <value>Chatbot settings</value>
   </data>
   <data name="CollectionDisplayName" xml:space="preserve">
-    <value>Module settings</value>
+    <value>Chatbot settings</value>
   </data>
 </root>
