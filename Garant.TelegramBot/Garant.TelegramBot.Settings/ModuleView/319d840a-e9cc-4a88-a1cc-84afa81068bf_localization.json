@@ -1,6 +1,14 @@
 {
+  "Action_Description_183c45312fea45bbb69a722251080a05": {
+    "en-US": "Opening the chatbot settings",
+    "ru-RU": "Открытие настроек чат-бота"
+  },
   "Action_Description_8d75a822b28943b7926eec652ab2d70b": {
     "ru-RU": "Открытие справочника пользователей чат-бота."
+  },
+  "Action_Title_183c45312fea45bbb69a722251080a05": {
+    "en-US": "Chatbot settings",
+    "ru-RU": "Настройки чат-бота"
   },
   "Action_Title_8d75a822b28943b7926eec652ab2d70b": {
     "en-US": "Action",

@@ -42,6 +42,10 @@
   "ExplorerTreeOrder": [
     {
       "ItemId": "9de34544-3489-4513-ab4d-96eb5bcec37f"
+    },
+    {
+      "ItemId": "429dc45a-58ec-4888-9b10-f733aa73b286",
+      "PreviousItemId": "9de34544-3489-4513-ab4d-96eb5bcec37f"
     }
   ],
   "HandledEvents": [
@@ -51,7 +55,29 @@
   "Importance": "Medium",
   "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "InterfaceNamespace": "Garant.TelegramBot",
+  "IsolatedAreas": [
+    {
+      "NameGuid": "fe7321a7-3a08-443a-91e1-62f00900b785",
+      "Name": "Deserialization"
+    }
+  ],
   "IsolatedAssemblyName": "Garant.TelegramBot.Isolated",
+  "IsolatedFunctions": [
+    {
+      "NameGuid": "41128acb-685f-4a11-9812-f38c1b351fed",
+      "Name": "DesirializeDocumentsInfo",
+      "IsolatedAreaId": "fe7321a7-3a08-443a-91e1-62f00900b785",
+      "Parameters": [
+        {
+          "Name": "jsonValue",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Collections.Generic.List<global::Garant.TelegramBot.Structures.Module.IFileInfo>",
+      "ReturnTypeFullName": "System.Collections.Generic.List`1[[Garant.TelegramBot.Structures.Module.IFileInfo, Sungero.Domain.Interfaces]]"
+    }
+  ],
   "IsolatedNamespace": "Garant.TelegramBot.Isolated",
   "IsVisible": false,
   "Overridden": [
@@ -75,6 +101,11 @@
           "Name": "username",
           "ParameterType": "global::System.String",
           "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "userId",
+          "ParameterType": "global::System.Int64",
+          "ParameterTypeFullName": "System.Int64"
         }
       ],
       "ReturnType": "void",
@@ -82,7 +113,7 @@
       "WebApiRequestType": "Post"
     },
     {
-      "Name": "CreateRequest",
+      "Name": "CreateRequestFromBot",
       "Parameters": [
         {
           "Name": "requestText",
@@ -90,7 +121,12 @@
           "ParameterTypeFullName": "System.String"
         },
         {
-          "Name": "username",
+          "Name": "userId",
+          "ParameterType": "global::System.Int64",
+          "ParameterTypeFullName": "System.Int64"
+        },
+        {
+          "Name": "fileInfos",
           "ParameterType": "global::System.String",
           "ParameterTypeFullName": "System.String"
         }
@@ -126,13 +162,13 @@
           "ParameterTypeFullName": "System.String"
         },
         {
-          "Name": "username",
-          "ParameterType": "global::System.String",
-          "ParameterTypeFullName": "System.String"
+          "Name": "userId",
+          "ParameterType": "global::System.Int64",
+          "ParameterTypeFullName": "System.Int64"
         }
       ],
-      "ReturnType": "global::Garant.TelegramBot.Structures.Module.IEntityInfosWithMessage",
-      "ReturnTypeFullName": "Garant.TelegramBot.Structures.Module.IEntityInfosWithMessage",
+      "ReturnType": "global::Garant.TelegramBot.Structures.Module.IEntitiesWithError",
+      "ReturnTypeFullName": "Garant.TelegramBot.Structures.Module.IEntitiesWithError",
       "WebApiRequestType": "Get"
     },
     {
@@ -148,6 +184,11 @@
           "Name": "documentId",
           "ParameterType": "global::System.Int64",
           "ParameterTypeFullName": "System.Int64"
+        },
+        {
+          "Name": "userId",
+          "ParameterType": "global::System.Int64",
+          "ParameterTypeFullName": "System.Int64"
         }
       ],
       "ReturnType": "global::Garant.TelegramBot.Structures.Module.IVersionInfo",
@@ -155,12 +196,40 @@
       "WebApiRequestType": "Get"
     },
     {
-      "Name": "SetChatId",
+      "Name": "RegisterUserByToken",
       "Parameters": [
+        {
+          "Name": "token",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "chatId",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        },
         {
           "Name": "username",
           "ParameterType": "global::System.String",
           "ParameterTypeFullName": "System.String"
+        },
+        {
+          "Name": "userId",
+          "ParameterType": "global::System.Int64",
+          "ParameterTypeFullName": "System.Int64"
+        }
+      ],
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String",
+      "WebApiRequestType": "Post"
+    },
+    {
+      "Name": "SetChatId",
+      "Parameters": [
+        {
+          "Name": "userId",
+          "ParameterType": "global::System.Int64",
+          "ParameterTypeFullName": "System.Int64"
         },
         {
           "Name": "chatId",
@@ -174,6 +243,24 @@
     }
   ],
   "PublicStructures": [
+    {
+      "Name": "EntitiesWithError",
+      "IsPublic": true,
+      "Properties": [
+        {
+          "Name": "EntityInfos",
+          "IsList": true,
+          "IsNullable": true,
+          "TypeFullName": "global::System.Collections.Generic.List<global::Garant.TelegramBot.Structures.Module.IEntityInfo>"
+        },
+        {
+          "Name": "Error",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        }
+      ],
+      "StructureNamespace": "Garant.TelegramBot.Structures.Module"
+    },
     {
       "Name": "EntityInfo",
       "IsPublic": true,
@@ -191,11 +278,17 @@
       "StructureNamespace": "Garant.TelegramBot.Structures.Module"
     },
     {
-      "Name": "EntityInfosWithMessage",
+      "Name": "FileInfo",
+      "IsIsolated": true,
       "IsPublic": true,
       "Properties": [
         {
-          "Name": "Error",
+          "Name": "Body",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        },
+        {
+          "Name": "Name",
           "IsNullable": true,
           "TypeFullName": "global::System.String"
         }
@@ -229,7 +322,12 @@
   "ResourceInterfaceNamespace": "Garant.TelegramBot",
   "ResourcesKeys": [
     "RequestResponsibles",
-    "RequestSubject"
+    "RequestSubject",
+    "DocumentTypeNotFound",
+    "EmployeeNotFound",
+    "ClarifyRequest",
+    "OpenChatbotSettingsFunctionName",
+    "OpenChatbotSettingsFunctionDescription"
   ],
   "ServerAssemblyName": "Garant.TelegramBot.Server",
   "ServerNamespace": "Garant.TelegramBot.Server",

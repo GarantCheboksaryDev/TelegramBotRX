@@ -8,6 +8,19 @@ namespace Garant.TelegramBot.Client
 {
   public class ModuleFunctions
   {
+    
+    #region Обложка
 
+    /// <summary>
+    /// Открыть настройки чат-бота.
+    /// </summary>
+    [LocalizeFunction("OpenChatbotSettingsFunctionName", "OpenChatbotSettingsFunctionDescription")]
+    public void OpenChatbotSettings()
+    {
+      Functions.Setting.Remote.GetChatbotSettings()?.Show();
+    }
+
+    #endregion
+    
   }
 }

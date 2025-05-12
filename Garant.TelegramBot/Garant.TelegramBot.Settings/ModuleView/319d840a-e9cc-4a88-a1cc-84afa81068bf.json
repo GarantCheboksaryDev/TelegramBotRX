@@ -58,6 +58,16 @@
           "Name": "Action",
           "Index": 0,
           "ParentId": "06de76ed-bc76-40c0-aee4-d433eda8953b"
+        },
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverFunctionActionSettings, Sungero.NoCode.Settings.Interfaces",
+          "FunctionName": "OpenChatbotSettings",
+          "FunctionModuleId": "c521b1ae-4142-457e-bacf-cc58ebeb4f7d",
+          "ActionId": "183c4531-2fea-45bb-b69a-722251080a05",
+          "NameGuid": "183c4531-2fea-45bb-b69a-722251080a05",
+          "Name": "Action",
+          "Index": 1,
+          "ParentId": "06de76ed-bc76-40c0-aee4-d433eda8953b"
         }
       ]
     },

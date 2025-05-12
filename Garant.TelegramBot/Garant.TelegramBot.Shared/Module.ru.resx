@@ -64,4 +64,19 @@
   <data name="RequestSubject" xml:space="preserve">
     <value>Исполните заявку: {0}</value>
   </data>
+  <data name="DocumentTypeNotFound" xml:space="preserve">
+    <value>Не найден тип документа по ИД</value>
+  </data>
+  <data name="EmployeeNotFound" xml:space="preserve">
+    <value>Не удалось найти сотрудника в Directum RX по логину в telegram</value>
+  </data>
+  <data name="ClarifyRequest" xml:space="preserve">
+    <value>Пожалуйста, уточните запрос</value>
+  </data>
+  <data name="OpenChatbotSettingsFunctionName" xml:space="preserve">
+    <value>Открыть настройки чат-бота</value>
+  </data>
+  <data name="OpenChatbotSettingsFunctionDescription" xml:space="preserve">
+    <value>Открытие записи справочника настроек чат-бота</value>
+  </data>
 </root>

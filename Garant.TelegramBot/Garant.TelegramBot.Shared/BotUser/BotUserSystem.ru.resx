@@ -76,4 +76,19 @@
   <data name="Property_ChatId" xml:space="preserve">
     <value>ИД чата</value>
   </data>
+  <data name="Property_UserId" xml:space="preserve">
+    <value>ИД пользователя</value>
+  </data>
+  <data name="Property_Token" xml:space="preserve">
+    <value>Токен для регистрации</value>
+  </data>
+  <data name="Action_GetToken" xml:space="preserve">
+    <value>Получить рег. токен</value>
+  </data>
+  <data name="Action_GetTokenHint" xml:space="preserve">
+    <value>Получение токена для регистрации в чат-боте</value>
+  </data>
+  <data name="Action_GetTokenDescription" xml:space="preserve">
+    <value>Получение токена для регистрации в чат-боте</value>
+  </data>
 </root>
