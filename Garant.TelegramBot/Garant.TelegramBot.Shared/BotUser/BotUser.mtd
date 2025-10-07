@@ -91,6 +91,7 @@
       ]
     }
   ],
+  "FormViewUuid": "5bbd1c6d-d60a-4127-8668-3906ce64ac43",
   "IconResourcesKeys": [],
   "IntegrationServiceName": "TelegramBotBotUser",
   "IsStatusEnabled": true,

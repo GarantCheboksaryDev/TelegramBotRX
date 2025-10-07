@@ -26,7 +26,6 @@
     "Tabs": []
   },
   "DesktopViews": [],
-  "IconResourcesKeys": [],
   "Importance": "Medium",
   "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "InterfaceNamespace": "Garant.TelegramSolution",
@@ -37,7 +36,6 @@
   "PublicStructures": [],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Garant.TelegramSolution",
-  "ResourcesKeys": [],
   "ServerAssemblyName": "Garant.TelegramSolution.Server",
   "ServerNamespace": "Garant.TelegramSolution.Server",
   "SharedAssemblyName": "Garant.TelegramSolution.Shared",
@@ -48,11 +46,11 @@
   "Versions": [
     {
       "Type": "SolutionMetadata",
-      "Number": 9
+      "Number": 11
     },
     {
       "Type": "ModuleMetadata",
-      "Number": 9
+      "Number": 11
     },
     {
       "Type": "DomainApi",

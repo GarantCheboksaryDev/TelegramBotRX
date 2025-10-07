@@ -45,6 +45,7 @@
       ]
     }
   ],
+  "FormViewUuid": "73fad1c7-7686-4b91-9f33-4f22c7c99fd3",
   "HandledEvents": [
     "CreatedServer"
   ],

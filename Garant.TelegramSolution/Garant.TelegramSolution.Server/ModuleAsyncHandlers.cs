@@ -6,7 +6,7 @@ using Sungero.CoreEntities;
 
 namespace Garant.TelegramSolution.Server
 {
-  public class ModuleAsyncHandlers
+  public partial class ModuleAsyncHandlers
   {
 
   }

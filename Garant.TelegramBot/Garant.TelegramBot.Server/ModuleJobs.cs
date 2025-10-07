@@ -6,7 +6,7 @@ using Sungero.CoreEntities;
 
 namespace Garant.TelegramBot.Server
 {
-  public class ModuleJobs
+  public partial class ModuleJobs
   {
 
   }
