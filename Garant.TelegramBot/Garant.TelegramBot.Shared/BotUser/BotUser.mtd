@@ -95,6 +95,7 @@
   "IconResourcesKeys": [],
   "IntegrationServiceName": "TelegramBotBotUser",
   "IsStatusEnabled": true,
+  "ListViewUuid": "f188d5ae-bf11-4498-8c2c-217653cd143a",
   "OperationsClass": "",
   "Overridden": [
     "CanBeSearch",

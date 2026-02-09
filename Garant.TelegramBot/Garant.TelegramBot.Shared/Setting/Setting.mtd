@@ -55,6 +55,7 @@
   "IntegrationServiceName": "TelegramBotSetting",
   "IsAutoCreated": true,
   "IsVisible": false,
+  "ListViewUuid": "f274e6ed-4498-4822-8426-5523c447509a",
   "OperationsClass": "",
   "Overridden": [
     "HideFromNavigationEditorCreationArea",
