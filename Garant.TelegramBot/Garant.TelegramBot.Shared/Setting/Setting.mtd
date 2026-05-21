@@ -45,6 +45,7 @@
       ]
     }
   ],
+  "FormViewUuid": "73fad1c7-7686-4b91-9f33-4f22c7c99fd3",
   "HandledEvents": [
     "CreatedServer"
   ],
@@ -54,6 +55,7 @@
   "IntegrationServiceName": "TelegramBotSetting",
   "IsAutoCreated": true,
   "IsVisible": false,
+  "ListViewUuid": "f274e6ed-4498-4822-8426-5523c447509a",
   "OperationsClass": "",
   "Overridden": [
     "HideFromNavigationEditorCreationArea",
@@ -111,7 +113,7 @@
   "Versions": [
     {
       "Type": "EntityMetadata",
-      "Number": 13
+      "Number": 14
     }
   ]
 }

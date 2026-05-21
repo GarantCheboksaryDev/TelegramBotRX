@@ -91,9 +91,11 @@
       ]
     }
   ],
+  "FormViewUuid": "5bbd1c6d-d60a-4127-8668-3906ce64ac43",
   "IconResourcesKeys": [],
   "IntegrationServiceName": "TelegramBotBotUser",
   "IsStatusEnabled": true,
+  "ListViewUuid": "f188d5ae-bf11-4498-8c2c-217653cd143a",
   "OperationsClass": "",
   "Overridden": [
     "CanBeSearch",
@@ -273,7 +275,7 @@
   "Versions": [
     {
       "Type": "EntityMetadata",
-      "Number": 13
+      "Number": 14
     }
   ]
 }

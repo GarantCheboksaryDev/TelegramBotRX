@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace Garant.TelegramBot.Server
 {
-  public class ModuleFunctions
+  public partial class ModuleFunctions
   {
     
     /// <summary>

@@ -51,7 +51,6 @@
   "HandledEvents": [
     "InitializingServer"
   ],
-  "IconResourcesKeys": [],
   "Importance": "Medium",
   "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "InterfaceNamespace": "Garant.TelegramBot",
@@ -339,7 +338,7 @@
   "Versions": [
     {
       "Type": "ModuleMetadata",
-      "Number": 8
+      "Number": 12
     },
     {
       "Type": "DomainApi",

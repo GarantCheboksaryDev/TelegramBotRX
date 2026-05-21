@@ -6,7 +6,7 @@ using Sungero.CoreEntities;
 
 namespace Garant.TelegramBot.Client
 {
-  public class ModuleFunctions
+  public partial class ModuleFunctions
   {
     
     #region Обложка

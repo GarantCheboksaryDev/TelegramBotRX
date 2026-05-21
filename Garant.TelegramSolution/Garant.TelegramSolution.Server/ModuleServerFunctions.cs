@@ -6,7 +6,7 @@ using Sungero.CoreEntities;
 
 namespace Garant.TelegramSolution.Server
 {
-  public class ModuleFunctions
+  public partial class ModuleFunctions
   {
     
   }

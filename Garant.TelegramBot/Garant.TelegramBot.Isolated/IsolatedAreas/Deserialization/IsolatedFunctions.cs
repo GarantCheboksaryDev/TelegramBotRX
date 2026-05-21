@@ -8,7 +8,7 @@ using Garant.TelegramBot.Structures.Module;
 
 namespace Garant.TelegramBot.Isolated.Deserialization
 {
-  public class IsolatedFunctions
+  public partial class IsolatedFunctions
   {
     /// <summary>
     /// Десериализовать Json с информацией о файлах из чат-бота.
